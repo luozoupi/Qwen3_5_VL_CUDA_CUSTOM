@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cuda_qwen3_vl"
+version = "0.1.0"
+description = "Custom CUDA kernels replacing every replaceable op in Qwen3-VL (dense + MoE)"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.5",
+    "transformers>=4.57.0",
+    "safetensors>=0.5.0",
+    "huggingface_hub>=0.30.0",
+    "pillow>=10.0.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["cuda_qwen3_vl*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
